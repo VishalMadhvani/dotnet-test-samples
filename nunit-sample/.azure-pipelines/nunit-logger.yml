@@ -1,3 +1,9 @@
+parameters:
+- name: mergeTestResults
+  displayName: Merge Test Results
+  type: boolean
+  default: false
+
 trigger: none
 
 pool:
@@ -14,4 +20,5 @@ steps:
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: '**/TestResults/TestResults.xml'
+    mergeTestResults: ${{ parameters.mergeTestResults }}
   condition: succeededOrFailed()
