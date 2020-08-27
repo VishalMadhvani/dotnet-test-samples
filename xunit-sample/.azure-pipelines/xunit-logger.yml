@@ -1,0 +1,17 @@
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'xunit-sample\XUnitSample.sln'
+    arguments: '--logger xunit'
+    publishTestResults: false
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TestResults/TestResults.xml'
+  condition: succeededOrFailed()

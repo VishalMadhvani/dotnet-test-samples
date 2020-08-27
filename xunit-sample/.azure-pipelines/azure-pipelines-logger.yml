@@ -1,0 +1,14 @@
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'xunit-sample\XUnitSample.sln'
+    arguments: '--logger AzurePipelines'
+    publishTestResults: false
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
