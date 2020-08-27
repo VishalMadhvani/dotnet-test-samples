@@ -1,0 +1,17 @@
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'nunit-sample\NUnitSample.sln'
+    arguments: '--logger nunit'
+    publishTestResults: false
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TestResults/TestResults.xml'
+  condition: succeededOrFailed()
