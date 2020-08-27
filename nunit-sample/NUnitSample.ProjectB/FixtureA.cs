@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
-namespace nunit_sample
+namespace NUnitSample.ProjectB
 {
     [TestFixture]
     public class FixtureA

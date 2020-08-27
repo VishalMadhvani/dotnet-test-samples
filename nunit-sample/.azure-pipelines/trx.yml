@@ -7,4 +7,4 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: 'nunit-sample\nunit-sample.csproj'
+    projects: 'nunit-sample\NUnitSample.sln'

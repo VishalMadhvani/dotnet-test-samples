@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
-namespace nunit_sample
+namespace NUnitSample.ProjectA
 {
     [TestFixture]
-    public class FixtureB
+    public class FixtureA
     {
         [Test]
         public void PassingTest()
