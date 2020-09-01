@@ -14,7 +14,7 @@ steps:
   inputs:
     command: 'test'
     projects: 'nunit-sample\NUnitSample.sln'
-    arguments: '--logger nunit'
+    arguments: '--logger nunit -- NUnit.DisplayName=FullName'
     publishTestResults: false
 - task: PublishTestResults@2
   inputs:

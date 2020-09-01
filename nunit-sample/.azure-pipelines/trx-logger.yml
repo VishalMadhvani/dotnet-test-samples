@@ -8,3 +8,4 @@ steps:
   inputs:
     command: 'test'
     projects: 'nunit-sample\NUnitSample.sln'
+    arguments: '-- NUnit.DisplayName=FullName'
